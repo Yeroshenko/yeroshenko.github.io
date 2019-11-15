@@ -1,0 +1,134 @@
+body
+  font-family: 'Montserrat', sans-serif
+  color: white
+  font-size: 14px
+  font-weight: 400
+
+  overflow: hidden
+  &::-webkit-scrollbar
+    width: 10px
+
+    background-color: $dark-color
+    &-track
+      background-color: black
+      border-radius: 10px
+    &-thumb
+      border-radius: 10px
+      background: $main-color
+
+/* Button */
+
+.button
+  width: 215px
+
+  color: #fff
+  font-weight: 600
+  font-size: 16px
+  letter-spacing: 2px
+  text-align: center
+  line-height: 55px
+
+  background-color: transparent
+  border: 2px solid white
+  border-radius: 25px
+  
+  transition: all .3s
+
+  cursor: pointer
+  outline: none
+
+/* Menu */
+
+.menu
+  position: fixed
+  right: 0
+  top: 0
+
+  height: 100vh
+  width: 300px
+  
+  background-color: black
+  font-size: 25px
+  padding: 26px 60px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  vertical-align: center
+  align-items: center
+  z-index: 3
+  transform: translateX(100%)
+  transition: .3s all
+  &-overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    display: none
+    background: rgba(black, 0.4)
+    z-index: 2
+  &-navigation
+    width: 100%
+    &__item
+      display: block
+      &:not(:last-child)
+        margin-bottom: 20px
+      &_link
+        cursor: pointer
+        position: relative
+        &:after
+          position: absolute
+          background-color: $main-color
+          display: block
+          content: ""
+          height: 2px
+          width: 0
+          bottom: 0
+          transition: 0.3s
+        &:hover
+          &:after
+            width: 100%
+
+.menu-active
+  .header-top__menu
+    &_text
+      transition: .3s all
+      transform: translateX(-110px)
+      font-size: 16px
+    &_icon  span
+      height: 0
+      &::before
+        transform: rotate(45deg)
+      &::after
+        transform: rotate(-45deg)
+
+.active
+  transform: translateX(0)
+
+/* Section title */
+
+.section-title
+  text-align: center
+  padding-top: 110px
+  margin-bottom: 102px
+  font-size: 40px
+  position: relative
+  &::after
+    content: ''
+    position: absolute
+    bottom: -20px
+    left: 50%
+    transform: translateX(-50%)
+    width: 120px
+    height: 2px
+    background-color: $main-color
+
+/* Classes */
+
+.active
+  display: flex
+
+.show
+  display: block
+
+
